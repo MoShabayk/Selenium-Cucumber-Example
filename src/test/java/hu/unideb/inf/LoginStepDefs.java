@@ -9,4 +9,11 @@ public class LoginStepDefs extends AbstractStepDefs {
     public void theErrorMessageMessageIsShown(String errorMessage) {
         assertEquals(errorMessage, homePage.getErrorMessage());
     }
+
+
+
+    @Then("the user is directed to {string}")
+    public void theURLIsDirectedToPAGE_URL(String PAGE_URL) {
+        assertEquals(PAGE_URL,homePage.getPageUrl());
+    }
 }

@@ -51,7 +51,6 @@ public class HomePage {
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
     }
-
     public void closePage() {
         driver.quit();
     }
@@ -75,5 +74,6 @@ public class HomePage {
     public String getTotal() {
         return priceLabel.getText();
     }
+    public String getPageUrl(){return driver.getCurrentUrl();}
 
 }
