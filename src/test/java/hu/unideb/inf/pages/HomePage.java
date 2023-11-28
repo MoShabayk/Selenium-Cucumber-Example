@@ -1,4 +1,4 @@
-package hu.unideb.inf;
+package hu.unideb.inf.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,9 +40,20 @@ public class HomePage {
         "Login", By.id("login-button"),
         "Cart", By.className("shopping_cart_link"),
         "Checkout", By.id("checkout"),
-        "Continue", By.id("continue")
+        "Continue", By.id("continue"),
+        "ResetAppState", By.id("reset_sidebar_link"),
+        "Logout",By.id("logout_sidebar_link"),
+        "About",By.id("about_sidebar_link"),
+        "AllItems",By.id("inventory_sidebar_link"),
+        "Sidebar",By.id("react-burger-menu-btn")
     );
 
+//    private static final Map<String, By> sidebarAnchors = Map.of(
+//    "ResetAppState", By.id("reset_sidebar_link"),
+//    "Logout",By.id("logout_sidebar_link"),
+//    "About",By.id("about_sidebar_link"),
+//    "AllItems",By.id("inventory_sidebar_link")
+//    );
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -69,6 +80,12 @@ public class HomePage {
 
     public void addItemToCart(String item) {
         driver.findElement(itemButtons.get(item)).click();
+    }
+    public void removeItemFromCart(String itemName) {
+        String formattedString = itemName.toLowerCase();
+        formattedString = formattedString.replace(" ", "-");
+        WebElement removeButton = driver.findElement(By.id( "remove-"+formattedString));
+        removeButton.click();
     }
 
     public String getTotal() {

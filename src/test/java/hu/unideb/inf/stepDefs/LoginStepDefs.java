@@ -1,4 +1,4 @@
-package hu.unideb.inf;
+package hu.unideb.inf.stepDefs;
 
 import io.cucumber.java.en.Then;
 import static org.junit.jupiter.api.Assertions.assertEquals;

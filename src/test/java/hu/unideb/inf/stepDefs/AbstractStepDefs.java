@@ -1,13 +1,11 @@
-package hu.unideb.inf;
+package hu.unideb.inf.stepDefs;
 
+import hu.unideb.inf.pages.HomePage;
+import hu.unideb.inf.pages.InventoryPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
 
 
 import java.time.Duration;
@@ -19,6 +17,8 @@ public abstract class AbstractStepDefs {
     private static final WebDriver driver;
 
     protected static HomePage homePage;
+
+    protected static InventoryPage inventoryPage;
 
     static {
 

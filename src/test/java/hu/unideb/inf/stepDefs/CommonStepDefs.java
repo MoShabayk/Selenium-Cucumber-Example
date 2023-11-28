@@ -1,4 +1,4 @@
-package hu.unideb.inf;
+package hu.unideb.inf.stepDefs;
 
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.en.Given;
