@@ -1,6 +1,7 @@
 package hu.unideb.inf.stepDefs;
 
 import io.cucumber.java.AfterAll;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
@@ -26,4 +27,8 @@ public class CommonStepDefs extends AbstractStepDefs {
         homePage.closePage();
     }
 
+    @And("the page is refreshed")
+    public void thePageIsRefreshed() {
+        homePage.refreshPage();
+    }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.LowerCa
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.Locale;
 
@@ -14,15 +15,11 @@ public class InventoryPage {
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
     }
-
+    @FindBy(css = "#shopping_cart_container > a > span")
+    private WebElement cartNumber;
 
     public int getNumberOfItemsInCart() {
-        String cartBadgeText = driver.findElement(By.id("shopping-cart-badge")).getText();
-        if (cartBadgeText.isEmpty()) {
-            return 0;
-        } else {
-            return Integer.parseInt(cartBadgeText);
-        }
+            return Integer.parseInt(cartNumber.getText());
     }
 
     public void proceedToCheckout() {

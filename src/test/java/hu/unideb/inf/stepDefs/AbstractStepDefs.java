@@ -39,6 +39,7 @@ public abstract class AbstractStepDefs {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT_TIME));
         homePage = new HomePage(driver);
+        inventoryPage = new InventoryPage(driver);
     }
 
 }

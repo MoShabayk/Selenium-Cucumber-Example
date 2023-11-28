@@ -48,7 +48,11 @@ public class HomePage {
         "Sidebar",By.id("react-burger-menu-btn")
     );
 
-//    private static final Map<String, By> sidebarAnchors = Map.of(
+    public void refreshPage() {
+        driver.navigate().refresh();
+    }
+
+    //    private static final Map<String, By> sidebarAnchors = Map.of(
 //    "ResetAppState", By.id("reset_sidebar_link"),
 //    "Logout",By.id("logout_sidebar_link"),
 //    "About",By.id("about_sidebar_link"),
