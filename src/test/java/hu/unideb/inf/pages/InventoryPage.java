@@ -1,12 +1,9 @@
 package hu.unideb.inf.pages;
 
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.LowerCase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.Locale;
 
 public class InventoryPage {
 
@@ -15,10 +12,6 @@ public class InventoryPage {
         this.driver = driver;
     }
 
-
-
-    @FindBy(css = "#shopping_cart_container > a.shopping_cart_link > span.shopping_cart_badge")
-    private WebElement cartNumber;
     public void addItemToCart(String item) {
         String formattedString = item.toLowerCase();
         formattedString = formattedString.replace(" ", "-");
@@ -41,10 +34,5 @@ public class InventoryPage {
 //    public String getcheckouterrormessage() {
 //        return checkouterrormessage.getText();
 //    }
-    public void proceedToCheckout() {
-        WebElement checkoutButton = driver.findElement(By.id("checkout"));
-        checkoutButton.click();
-    }
-
 
 }

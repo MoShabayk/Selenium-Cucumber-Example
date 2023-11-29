@@ -17,6 +17,10 @@ Feature: Saucedemo Shopping
   Examples:
     | item1          | item2             |
     | Sauce Labs Bike Light| Sauce Labs Onesie |
+    | Sauce Labs Backpack| Sauce Labs Bolt T-Shirt |
+    | Sauce Labs Fleece Jacket| Sauce Labs Onesie |
+    | Sauce Labs Bike Light| Test.allTheThings() T-Shirt (Red) |
+
 
 
   Scenario Outline: Remove items from the shopping cart
@@ -31,6 +35,9 @@ Feature: Saucedemo Shopping
     Examples:
       | item1                 | item2               |
       | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket |
+      | Sauce Labs Backpack| Sauce Labs Bolt T-Shirt |
+      | Sauce Labs Fleece Jacket| Sauce Labs Onesie |
+      | Sauce Labs Bike Light| Test.allTheThings() T-Shirt (Red) |
 
 
   Scenario Outline: Remove items from the shopping cart
@@ -44,6 +51,10 @@ Feature: Saucedemo Shopping
     Examples:
       | item1|
       | Sauce Labs Onesie|
+      | Sauce Labs Fleece Jacket |
+      | Test.allTheThings() T-Shirt (Red) |
+      | Sauce Labs Bike Light|
+
 
 
 
@@ -55,6 +66,9 @@ Feature: Saucedemo Shopping
     Examples:
       | item1          | item2             |PAGE_URL                            |
       | Sauce Labs Backpack | Sauce Labs Onesie |https://www.saucedemo.com/cart.html |
+      | Sauce Labs Backpack| Sauce Labs Bolt T-Shirt |https://www.saucedemo.com/cart.html |
+      | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket |https://www.saucedemo.com/cart.html |
+      | Sauce Labs Bike Light| Test.allTheThings() T-Shirt (Red) |https://www.saucedemo.com/cart.html |
 
 
   Scenario Outline: Checkout-phase-one
@@ -66,3 +80,6 @@ Feature: Saucedemo Shopping
     Examples:
       | item1               | item2             | PAGE_URL                            |
       | Sauce Labs Backpack | Sauce Labs Onesie | https://www.saucedemo.com/checkout-step-one.html |
+      | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket | https://www.saucedemo.com/checkout-step-one.html |
+      | Sauce Labs Backpack| Sauce Labs Bolt T-Shirt | https://www.saucedemo.com/checkout-step-one.html |
+      | Sauce Labs Bike Light| Test.allTheThings() T-Shirt (Red) | https://www.saucedemo.com/checkout-step-one.html |

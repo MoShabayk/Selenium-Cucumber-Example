@@ -48,7 +48,8 @@ public class HomePage {
         "Logout",By.id("logout_sidebar_link"),
         "About",By.id("about_sidebar_link"),
         "AllItems",By.id("inventory_sidebar_link"),
-        "Sidebar",By.id("react-burger-menu-btn")
+        "Sidebar",By.id("react-burger-menu-btn"),
+        "Continue Shopping",By.id("continue-shopping")
     );
 
     public void refreshPage() {

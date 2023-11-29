@@ -32,3 +32,6 @@ Feature: Saucedemo sidebar
     Examples:
       | item1                   | item2                    |
       | Sauce Labs Bolt T-Shirt | Sauce Labs Fleece Jacket |
+      | Sauce Labs Backpack| Sauce Labs Bolt T-Shirt |
+      | Sauce Labs Fleece Jacket| Sauce Labs Onesie |
+      | Sauce Labs Bike Light| Test.allTheThings() T-Shirt (Red) |
