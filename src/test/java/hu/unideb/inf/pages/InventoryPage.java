@@ -15,12 +15,25 @@ public class InventoryPage {
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
     }
-    @FindBy(css = "#shopping_cart_container > a > span")
+    @FindBy(css = "#shopping_cart_container > a.shopping_cart_link > span.shopping_cart_badge")
     private WebElement cartNumber;
-
-    public int getNumberOfItemsInCart() {
-            return Integer.parseInt(cartNumber.getText());
+    public void addItemToCart(String item) {
+        String formattedString = item.toLowerCase();
+        formattedString = formattedString.replace(" ", "-");
+        WebElement addButton = driver.findElement(By.id( "add-to-cart-"+formattedString));
+        addButton.click();
+//        driver.findElement(itemButtons.get(item)).click();
     }
+    public void removeItemFromCart(String itemName) {
+        String formattedString = itemName.toLowerCase();
+        formattedString = formattedString.replace(" ", "-");
+        WebElement removeButton = driver.findElement(By.id( "remove-"+formattedString));
+        removeButton.click();
+    }
+    public int getNumberOfItemsInCart() {
+        return driver.findElements(By.className("cart_item")).size();
+    }
+
 
     public void proceedToCheckout() {
         WebElement checkoutButton = driver.findElement(By.id("checkout"));

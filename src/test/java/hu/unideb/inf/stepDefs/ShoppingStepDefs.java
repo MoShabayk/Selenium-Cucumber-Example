@@ -4,14 +4,16 @@ import hu.unideb.inf.pages.InventoryPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class ShoppingStepDefs extends AbstractStepDefs{
 
     @Given("I have the {string} and {string} in my shopping cart")
     public void addItemsToCart(String item1, String item2) {
-        homePage.addItemToCart(item1);
-        homePage.addItemToCart(item2);
+        inventoryPage.addItemToCart(item1);
+        inventoryPage.addItemToCart(item2);
     }
 
 //    @Then("I should have two items in my shopping cart")
@@ -20,17 +22,17 @@ public class ShoppingStepDefs extends AbstractStepDefs{
 //    }
 
     @Then("I should have {int} items in my shopping cart")
-    public void verifyNumberOfItemsAfterRemoval(int number) {
-        assert inventoryPage.getNumberOfItemsInCart() == number;
+    public void verifyNumberOfItems(int number) {
+        assertEquals(inventoryPage.getNumberOfItemsInCart(), number);
     }
     @Given("I remove the {string} from the shopping cart")
     public void removeItem2FromCart(String item) {
-        homePage.removeItemFromCart(item);
+        inventoryPage.removeItemFromCart(item);
     }
 
     @Given("I add the {string} to the shopping cart")
     public void addItem1ToCart(String item) {
-        homePage.addItemToCart(item);
+        inventoryPage.addItemToCart(item);
     }
 
     @Given("I am logged in to Saucedemo")

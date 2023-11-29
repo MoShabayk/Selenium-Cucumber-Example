@@ -27,14 +27,14 @@ public class HomePage {
        "Zip Code", By.id("postal-code")
     );
 
-    private static final Map<String, By> itemButtons = Map.of(
-       "Sauce Labs Backpack", By.id("add-to-cart-sauce-labs-backpack"),
-       "Sauce Labs Bike Light", By.id("add-to-cart-sauce-labs-bike-light"),
-       "Sauce Labs Bolt T-Shirt", By.id("add-to-cart-sauce-labs-bolt-t-shirt"),
-       "Sauce Labs Fleece Jacket", By.id("add-to-cart-sauce-labs-fleece-jacket"),
-       "Sauce Labs Onesie", By.id("add-to-cart-sauce-labs-onesie"),
-       "Test.allTheThings() T-Shirt (Red)", By.id("add-to-cart-test.allthethings()-t-shirt-(red)")
-    );
+//    private static final Map<String, By> itemButtons = Map.of(
+//       "Sauce Labs Backpack", By.id("add-to-cart-sauce-labs-backpack"),
+//       "Sauce Labs Bike Light", By.id("add-to-cart-sauce-labs-bike-light"),
+//       "Sauce Labs Bolt T-Shirt", By.id("add-to-cart-sauce-labs-bolt-t-shirt"),
+//       "Sauce Labs Fleece Jacket", By.id("add-to-cart-sauce-labs-fleece-jacket"),
+//       "Sauce Labs Onesie", By.id("add-to-cart-sauce-labs-onesie"),
+//       "Test.allTheThings() T-Shirt (Red)", By.id("add-to-cart-test.allthethings()-t-shirt-(red)")
+//    );
 
     private static final Map<String, By> navigationButtons = Map.of(
         "Login", By.id("login-button"),
@@ -82,15 +82,7 @@ public class HomePage {
         return errorMessage.getText();
     }
 
-    public void addItemToCart(String item) {
-        driver.findElement(itemButtons.get(item)).click();
-    }
-    public void removeItemFromCart(String itemName) {
-        String formattedString = itemName.toLowerCase();
-        formattedString = formattedString.replace(" ", "-");
-        WebElement removeButton = driver.findElement(By.id( "remove-"+formattedString));
-        removeButton.click();
-    }
+
 
     public String getTotal() {
         return priceLabel.getText();
