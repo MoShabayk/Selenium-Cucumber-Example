@@ -53,6 +53,10 @@ public class ShoppingStepDefs extends AbstractStepDefs{
     @Given("the {string} anchor is clicked")
     public void theResetAppStateAnchorIsClicked() {
     }
+    @Then("the checkout {string} message is shown")
+    public void theCheckoutErrorMessageMessageIsShown(String errorMessage) {
+        assertEquals(errorMessage, homePage.getcheckouterrormessage());
+    }
 
 //    @Then("I should have zero item in my shopping cart")
 //    public void iShouldHaveZeroItemInMyShoppingCart() {

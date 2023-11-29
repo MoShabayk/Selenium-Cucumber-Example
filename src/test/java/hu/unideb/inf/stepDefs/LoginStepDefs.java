@@ -10,10 +10,10 @@ public class LoginStepDefs extends AbstractStepDefs {
         assertEquals(errorMessage, homePage.getErrorMessage());
     }
 
-
-
     @Then("the user is directed to {string}")
     public void theURLIsDirectedToPAGE_URL(String PAGE_URL) {
         assertEquals(PAGE_URL,homePage.getPageUrl());
     }
+
+
 }

@@ -11,10 +11,12 @@ import java.util.Locale;
 public class InventoryPage {
 
     private WebDriver driver;
-
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
     }
+
+
+
     @FindBy(css = "#shopping_cart_container > a.shopping_cart_link > span.shopping_cart_badge")
     private WebElement cartNumber;
     public void addItemToCart(String item) {
@@ -34,10 +36,15 @@ public class InventoryPage {
         return driver.findElements(By.className("cart_item")).size();
     }
 
-
+//    @FindBy(css = "#checkout_info_container > div > form > div.checkout_info > div.error-message-container.error > h3")
+//    private WebElement checkouterrormessage;
+//    public String getcheckouterrormessage() {
+//        return checkouterrormessage.getText();
+//    }
     public void proceedToCheckout() {
         WebElement checkoutButton = driver.findElement(By.id("checkout"));
         checkoutButton.click();
     }
+
 
 }

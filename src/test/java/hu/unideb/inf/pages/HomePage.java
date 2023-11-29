@@ -16,6 +16,9 @@ public class HomePage {
 
     @FindBy(css = "#login_button_container > div > form > div.error-message-container.error > h3")
     private WebElement errorMessage;
+    public String getErrorMessage() {
+        return errorMessage.getText();
+    }
     @FindBy(css = "#checkout_summary_container > div > div.summary_info > div.summary_info_label.summary_total_label")
     private WebElement priceLabel;
 
@@ -77,12 +80,11 @@ public class HomePage {
     public void clickButton(String button) {
         driver.findElement(navigationButtons.get(button)).click();
     }
-
-    public String getErrorMessage() {
-        return errorMessage.getText();
+    @FindBy(css = "#checkout_info_container > div > form > div.checkout_info > div.error-message-container.error > h3")
+    private WebElement checkouterrormessage;
+    public String getcheckouterrormessage() {
+        return checkouterrormessage.getText();
     }
-
-
 
     public String getTotal() {
         return priceLabel.getText();
